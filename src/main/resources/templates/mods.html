@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <title>Model List</title>
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <h1>Models</h1>
+    </div>
+
+    <div class="row">
+        <table class="table">
+            <thead class="thead-light">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Brand</th>
+                <th>Commands</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="m : ${mods}">
+                <td th:text="${m.id}"></td>
+                <td th:text="${m.name}"></td>
+                <td th:text="${m.brand.name}"></td>
+                <td>
+                    <div class="btn-group">
+                        <a th:href="@{'/update/' + ${m.id}}" class="btn btn-warning">Update</a>
+                        <a th:href="@{'/delete/' + ${m.id}}" class="btn btn-danger">Delete</a>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="row">
+        <a href="create" class="btn btn-primary" role="button">Create Model</a>
+    </div>
+</div>
+</body>
+</html>
