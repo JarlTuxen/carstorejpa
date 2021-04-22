@@ -11,6 +11,7 @@ public class Brand {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "name")
     private String name;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "brand")
@@ -19,6 +20,7 @@ public class Brand {
     public Brand() {
     }
 
+    //ingen id i constructor - JPA laver id
     public Brand(String name, Set<Mod> mod) {
         this.name = name;
         this.mod = mod;
