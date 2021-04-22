@@ -16,20 +16,12 @@ public class BrandService {
     BrandRepository brandRepository;
 
     public Set<Brand> findAll(){
-        Set<Brand> brands = new HashSet<>();
-        for (Brand brand:brandRepository.findAll()){
-            brands.add(brand);
         }
         return brands;
     }
 
     public Brand findById(Long id){
         //findById returnerer en optional, så der skal checkes for null og pakkes ud
-        Optional<Brand> optionalBrand = brandRepository.findById(id);
-        if (!optionalBrand.isPresent()){
-            throw new RuntimeException("Brand " + id + " not found");
-        }
-        //returner indhold af optional vha. get()
         return optionalBrand.get();
     }
 
