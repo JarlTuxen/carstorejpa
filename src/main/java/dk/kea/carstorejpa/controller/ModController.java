@@ -1,7 +1,6 @@
 package dk.kea.carstorejpa.controller;
 
 import dk.kea.carstorejpa.model.Mod;
-import dk.kea.carstorejpa.repository.ModRepository;
 import dk.kea.carstorejpa.service.BrandService;
 import dk.kea.carstorejpa.service.ModService;
 import org.springframework.beans.factory.annotation.Autowired;
