@@ -13,14 +13,14 @@ public class Note {
     private String note;
 
     @OneToOne
-    private Mod model;
+    private Mod mod;
 
     public Note() {
     }
 
-    public Note(String note, Mod model) {
+    public Note(String note, Mod mod) {
         this.note = note;
-        this.model = model;
+        this.mod = mod;
     }
 
     public Long getId() {
@@ -39,11 +39,11 @@ public class Note {
         this.note = note;
     }
 
-    public Mod getModel() {
-        return model;
+    public Mod getMod() {
+        return mod;
     }
 
-    public void setModel(Mod model) {
-        this.model = model;
+    public void setMod(Mod mod) {
+        this.mod = mod;
     }
 }
