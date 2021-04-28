@@ -1,8 +1,10 @@
 package dk.kea.carstorejpa.controller;
 
 import dk.kea.carstorejpa.model.Mod;
+import dk.kea.carstorejpa.model.Note;
 import dk.kea.carstorejpa.service.BrandService;
 import dk.kea.carstorejpa.service.ModService;
+import dk.kea.carstorejpa.service.NoteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,6 +22,9 @@ public class ModController {
     @Autowired
     BrandService brandService;
 
+    @Autowired
+    NoteService noteService;
+
     @GetMapping("/mods")
     public String mods(Model model){
         model.addAttribute("mods", modService.findAll());
@@ -35,7 +40,16 @@ public class ModController {
 
     @PostMapping("/create")
     public String create(@ModelAttribute Mod mod){
-        modService.create(mod);
+        //create Mod
+        Mod newMod = modService.create(mod);
+
+        //etabler referencer
+        //opret ny Note med reference til Mod den nye model og create
+        Note note = new Note("...noter...", newMod);
+        noteService.create(note);
+        //sæt reference fra Mod til Note i Mod og update Mod
+        newMod.setNote(note);
+        modService.update(newMod);
         return "redirect:/mods";
     }
 
