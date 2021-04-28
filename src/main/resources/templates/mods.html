@@ -19,14 +19,16 @@
                 <th>Id</th>
                 <th>Name</th>
                 <th>Brand</th>
+                <th>Notes</th>
                 <th>Commands</th>
             </tr>
             </thead>
             <tbody>
             <tr th:each="m : ${mods}">
-                <td th:text="${m.id}"></td>
-                <td th:text="${m.name}"></td>
-                <td th:text="${m.brand.name}"></td>
+                <td th:text="${m.id}">666</td>
+                <td th:text="${m.name}">Highway Star</td>
+                <td th:text="${m.brand.name}">Deep Purple</td>
+                <td th:text="${m.note.note}">Den er lilla!</td>
                 <td>
                     <div class="btn-group">
                         <a th:href="@{'/update/' + ${m.id}}" class="btn btn-warning">Update</a>
