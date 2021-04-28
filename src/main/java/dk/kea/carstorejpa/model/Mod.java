@@ -8,20 +8,24 @@ public class Mod {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
-    String name;
+    private String name;
 
     @ManyToOne
     @JoinColumn(name = "brand_id", nullable = false)
     private Brand brand;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    private Note note;
+
     public Mod() {
     }
 
-    public Mod(String name, Brand brand) {
+    public Mod(String name, Brand brand, Note note) {
         this.name = name;
         this.brand = brand;
+        this.note = note;
     }
 
     public Long getId() {
@@ -46,5 +50,13 @@ public class Mod {
 
     public void setBrand(Brand brand) {
         this.brand = brand;
+    }
+
+    public Note getNote() {
+        return note;
+    }
+
+    public void setNote(Note note) {
+        this.note = note;
     }
 }
