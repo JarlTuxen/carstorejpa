@@ -17,6 +17,8 @@
                 <input type="hidden" name="id" th:value="${id}">
                 <label for="name">Name:</label>
                 <input id="name" class="form-control" type="text" name="name" th:field="*{name}" th:value="${name}">
+                <input type="hidden" id="note_id" name="noteid" th:field="*{note.id}" th:value="*{note.id}">
+                <input type="hidden" id="note_noter" name="notenoter" th:field="*{note.noter}" th:value="*{note.noter}">
             </div>
             <div class="form-group">
                 <label for="brand">Choose brand</label>
@@ -28,9 +30,9 @@
                     </option>
                 </select>
             </div>
-            <p id="space"></p>
+            <p id="extraspace"></p>
             <div class="form-group">
-                <input type="submit" value="UPDATE" class="btn btn-success" role="button">
+                <input type="submit" value="Update" class="btn btn-success" role="button">
             </div>
         </form>
     </div>

@@ -74,4 +74,18 @@ public class ModController {
         return "redirect:/mods";
     }
 
+    @GetMapping("/updateNote/{id}")
+    public String update(@PathVariable("id") long id, Model model){
+        model.addAttribute("note", noteService.findById(id));
+        return "updateNote";
+    }
+
+    @PostMapping("/updateNote")
+    public String update(@ModelAttribute Note note){
+        //update by using update service
+        noteService.update(note);
+        return "redirect:/mods";
+    }
+
+
 }

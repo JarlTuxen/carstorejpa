@@ -28,9 +28,10 @@
                 <td th:text="${m.id}">666</td>
                 <td th:text="${m.name}">Highway Star</td>
                 <td th:text="${m.brand.name}">Deep Purple</td>
-                <td th:text="${m.note.note}">Den er lilla!</td>
+                <td th:text="${m.note.noter}">Den er lilla!</td>
                 <td>
                     <div class="btn-group">
+                        <a th:href="@{'/updateNote/' + ${m.note.id}}" class="btn btn-warning">Edit notes</a>
                         <a th:href="@{'/update/' + ${m.id}}" class="btn btn-warning">Update</a>
                         <a th:href="@{'/delete/' + ${m.id}}" class="btn btn-danger">Delete</a>
                     </div>

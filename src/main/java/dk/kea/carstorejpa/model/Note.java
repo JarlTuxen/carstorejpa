@@ -10,7 +10,7 @@ public class Note {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String note;
+    private String noter;
 
     @OneToOne
     private Mod mod;
@@ -18,8 +18,8 @@ public class Note {
     public Note() {
     }
 
-    public Note(String note, Mod mod) {
-        this.note = note;
+    public Note(String noter, Mod mod) {
+        this.noter = noter;
         this.mod = mod;
     }
 
@@ -31,12 +31,12 @@ public class Note {
         this.id = id;
     }
 
-    public String getNote() {
-        return note;
+    public String getNoter() {
+        return noter;
     }
 
-    public void setNote(String note) {
-        this.note = note;
+    public void setNoter(String note) {
+        this.noter = note;
     }
 
     public Mod getMod() {

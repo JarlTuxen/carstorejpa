@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Notes</title>
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <h1>Update Notes</h1>
+    </div>
+    <div class="row">
+        <form action="/updateNote" th:object="${note}" method="post">
+            <div class="form-group">
+                <input type="hidden" name="id" th:value="${id}">
+                <label for="note">Notes:</label>
+                <input id="noter" class="form-control" type="text" name="noter" th:field="*{noter}" th:value="${noter}">
+                <input type="hidden" id="mod_id" name="modid" th:field="*{mod.id}" th:value="*{mod.id}">
+                <input type="hidden" id="mod_name" name="modname" th:field="*{mod.name}" th:value="*{mod.name}">            </div>
+            <p id="extraspace"></p>
+            <div class="form-group">
+                <input type="submit" value="Update Notes" class="btn btn-success" role="button">
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

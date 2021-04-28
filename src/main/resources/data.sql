@@ -10,7 +10,7 @@ VALUES
 ('Yaris',3),
 ('Punto', 1),
 ('Aygo',3);
-INSERT INTO Notes (note, mod_id)
+INSERT INTO Notes (noter, mod_id)
 VALUES
        ('Fin, lille familiebil', 1),
        ('Ekslusiv oplevelse', 2),
