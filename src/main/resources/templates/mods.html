@@ -24,9 +24,9 @@
             </thead>
             <tbody>
             <tr th:each="m : ${mods}">
-                <td th:text="${m.id}"></td>
-                <td th:text="${m.name}"></td>
-                <td th:text="${m.brand.name}"></td>
+                <td th:text="${m.id}">42</td>
+                <td th:text="${m.name}">Fiesta</td>
+                <td th:text="${m.brand.name}">Ford</td>
                 <td>
                     <div class="btn-group">
                         <a th:href="@{'/update/' + ${m.id}}" class="btn btn-warning">Update</a>
