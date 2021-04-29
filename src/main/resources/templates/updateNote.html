@@ -15,10 +15,14 @@
     <form action="/updateNote" th:object="${note}" method="post">
       <div class="form-group">
         <input type="hidden" name="id" th:value="${id}">
-        <label for="noter">note</label>
+        <label for="noter">Noter:</label>
         <input id="noter" class="form-control" type="text" name="noter" th:field="*{noter}" th:value="${noter}">
+        <!-- tilføj skjulte inputfelter med mod.id og mod.name-->
+        <input type="hidden" id="mod_id" name="modid" th:field="*{mod.id}" th:value="*{mod.id}">
+        <input type="hidden" id="mod_name" name="modnoter" th:field="*{mod.name}" th:value="*{mod.name}">
+
       </div>
-      <p id="space"></p>
+      <p id="extraspace"></p>
       <div class="form-group">
         <input type="submit" value="Update Notes" class="btn btn-success" role="button">
       </div>

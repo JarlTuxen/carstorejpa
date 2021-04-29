@@ -17,6 +17,9 @@
                 <input type="hidden" name="id" th:value="${id}">
                 <label for="name">Name:</label>
                 <input id="name" class="form-control" type="text" name="name" th:field="*{name}" th:value="${name}">
+                <!-- info om note objekt -->
+                <input type="hidden" id="note_id" name="noteid" th:field="*{note.id}" th:value="*{note.id}">
+                <input type="hidden" id="note_noter" name="notenoter" th:field="*{note.noter}" th:value="*{note.noter}">
             </div>
             <div class="form-group">
                 <label for="brand">Choose brand</label>

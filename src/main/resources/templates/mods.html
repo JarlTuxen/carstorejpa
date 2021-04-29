@@ -19,6 +19,7 @@
                 <th>Id</th>
                 <th>Name</th>
                 <th>Brand</th>
+                <th>Notes</th>
                 <th>Commands</th>
             </tr>
             </thead>
@@ -27,8 +28,10 @@
                 <td th:text="${m.id}">42</td>
                 <td th:text="${m.name}">Fiesta</td>
                 <td th:text="${m.brand.name}">Ford</td>
+                <td th:text="${m.note.noter}">Fin, lille Ford</td>
                 <td>
                     <div class="btn-group">
+                        <a th:href="@{'/updateNote/' + ${m.note.id}}" class="btn btn-warning">Edit Notes</a>
                         <a th:href="@{'/update/' + ${m.id}}" class="btn btn-warning">Update</a>
                         <a th:href="@{'/delete/' + ${m.id}}" class="btn btn-danger">Delete</a>
                     </div>
